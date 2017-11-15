@@ -34,47 +34,35 @@ uint8_t writeParameter(uint8_t parameterSet, uint8_t val)
 
 void init_SI1133()
 {
-  writeParameter(PARAM_CHAN_LIST, CHAN_6);
+  writeParameter(PARAM_CHAN_LIST, CHAN_3);
 
-  writeParameter(PARAM_ADCCONFIG0, MEDIUM_IR);
-  writeParameter(PARAM_ADCSENS0, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCPOST0, 0x00);   // 16 bit resolution and no threshold
+  writeParameter(PARAM_ADCCONFIG0, MEDIUM_IR);;
+  writeParameter(PARAM_ADCSENS0, 0x00);   // Measure after every 12.2 msec
+  writeParameter(PARAM_ADCPOST0, BITS_16);   // 24 bit resolution and no threshold
   writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
   writeParameter(PARAM_MEASRATE_H, 0x01);
   writeParameter(PARAM_MEASCONFIG0, COUNTER_INDEX_1);  // Selected MEASCOUNT
 
-  writeParameter(PARAM_ADCCONFIG1, LARGE_IR);
-  writeParameter(PARAM_ADCSENS1, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCP0ST1, 0x00);   // 16 bit resolution and no threshold
+  writeParameter(PARAM_ADCCONFIG1, LARGE_WHITE);
+  writeParameter(PARAM_ADCSENS1, 0x00);   // Measure after every 12.2 msec
+  writeParameter(PARAM_ADCP0ST1, BITS_16);   // 16 bit resolution and no threshold
   writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
   writeParameter(PARAM_MEASRATE_H, 0x01);
   writeParameter(PARAM_MEASCONFIG1, COUNTER_INDEX_1);  // Selected MEASCOUNT
 
-  writeParameter(PARAM_ADCCONFIG2, WHITE);
-  writeParameter(PARAM_ADCSENS2, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCPOST2, 0x00);   // 16 bit resolution and no threshold
+  writeParameter(PARAM_ADCCONFIG2, UV);
+  writeParameter(PARAM_ADCSENS2, 0x0B);   // Measure after every 12.2 msec
+  writeParameter(PARAM_ADCPOST2, BITS_16);   // 16 bit resolution and no threshold
   writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
   writeParameter(PARAM_MEASRATE_H, 0x01);
   writeParameter(PARAM_MEASCONFIG2, COUNTER_INDEX_1);  // Selected MEASCOUNT
 
-  writeParameter(PARAM_ADCCONFIG3, LARGE_WHITE);
-  writeParameter(PARAM_ADCSENS3, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCPOST3, 0x00);   // 16 bit resolution and no threshold
-  writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
-  writeParameter(PARAM_MEASRATE_H, 0x01);
-  writeParameter(PARAM_MEASCONFIG3, COUNTER_INDEX_1);  // Selected MEASCOUNT
-
-  writeParameter(PARAM_ADCCONFIG4, UV);
-  writeParameter(PARAM_ADCSENS4, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCPOST4, 0x00);   // 16 bit resolution and no threshold
-  writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
-  writeParameter(PARAM_MEASRATE_H, 0x01);
-  writeParameter(PARAM_MEASCONFIG4, COUNTER_INDEX_1);  // Selected MEASCOUNT
-
-  writeParameter(PARAM_ADCCONFIG5, UV_DEEP);
-  writeParameter(PARAM_ADCSENS5, 0x09);   // Measure after every 12.2 msec
-  writeParameter(PARAM_ADCPOST5, 0x00);   // 16 bit resolution and no threshold
-  writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
-  writeParameter(PARAM_MEASRATE_H, 0x01);
-  writeParameter(PARAM_MEASCONFIG5, COUNTER_INDEX_1);  // Selected MEASCOUNT
+  /*
+    writeParameter(PARAM_ADCCONFIG3, UV_DEEP);
+    writeParameter(PARAM_ADCSENS3, 0x00);   // Measure after every 12.2 msec
+    writeParameter(PARAM_ADCPOST3, BITS_16);   // 16 bit resolution and no threshold
+    writeParameter(PARAM_MEASRATE_L, 0x01); // Measure rate cannot be zero hence some random number
+    writeParameter(PARAM_MEASRATE_H, 0x01);
+    writeParameter(PARAM_MEASCONFIG3, COUNTER_INDEX_1);  // Selected MEASCOUNT
+  */
 }
